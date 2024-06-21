@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #display-area {
+        width: 300px;
+        height: 200px;
+        border: 1px solid #000;
+        margin-bottom: 10px;
+        overflow: auto; /* Para agregar scroll si el contenido es 
+        demasiado grande */
+        }
+        </style>
+        </head>
+        <body bgcolor="#FCEA95">
+        <h1>Quejas o Sugerencias</h1>
+        <div id="display-area"></div>
+        <button onclick="mostrarTexto()">Agregar Sugerencia</button>
+        <button onclick="limpiarDisplay()">Limpiar Sugerencia</button>
+        <script>
+        function mostrarTexto() {
+        var texto = prompt("texto a mostrar");
+        var displayArea = document.getElementById("display-area");
+        displayArea.innerHTML += "<p>" + texto + "</p>";
+        }
+        function limpiarDisplay() {
+        var displayArea = document.getElementById("display-area");
+        displayArea.innerHTML = "";
+        }
+        </script>
+            <style>
+                body {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  height: 100vh;
+                  margin: 0;
+                  font-family: Arial, sans-serif;
+                  background-color: #f0f0f0;
+                }
+                .container {
+                  display: flex;
+                  flex-wrap: wrap;
+                  justify-content: center;
+                  gap: 10px;
+                }
+                .box {
+                  width: 100px;
+                  height: 100px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  background-color: #3498db;
+                  color: white;
+                  font-size: 18px;
+                  cursor: pointer;
+                  transition: background-color 0.3s ease;
+                }
+              </style>
+            </head>
+            <body>
+                <h2>¿Como fue tu experiencia con Nogalvet?</h2>
+              <div class="container">
+                <div class="box">1</div>
+                <div class="box">2</div>
+                <div class="box">3</div>
+                <div class="box">4</div>
+                <div class="box">5</div>
+                <div class="box">6</div>
+                <div class="box">7</div>
+                <div class="box">8</div>
+                <div class="box">9</div>
+              </div>
+            
+              <script>
+                function cambiarColor(event) {
+                  const colores = ["#FF5733", "#33FF57", "#5733FF", "#FF3357", "#33FFC1", "#336CFF"];
+                  const colorAleatorio = colores[Math.floor(Math.random() * colores.length)];
+                  event.target.style.backgroundColor = colorAleatorio;
+                }
+            
+                document.querySelectorAll('.box').forEach(box => {
+                  box.addEventListener('click', cambiarColor);
+                });
+              </script>
+        </body>
